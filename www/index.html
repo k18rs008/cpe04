@@ -192,7 +192,7 @@
         active = false;
         period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
         $("#time").html("経過時間： 0");
-        $("#remain").html("残り時間： " + period);   
+        $("#remain").html("残り時間： " + period);
     }
     
  
@@ -207,6 +207,17 @@
           if (rest <= 0) {
             active = false;
             alarm();
+          }
+          if (rest == 3) {
+            $("body").css("backgroundColor","#53c3eb");
+          }else if (rest == 2) {
+            $("body").css("backgroundColor","#2fb5eb");
+          } else if (rest == 1) {
+            $("body").css("backgroundColor","#00a8eb");
+          } else if (rest <= 0) {
+            $("body").css("backgroundColor","#eba286");
+          } else {
+            $("body").css("backgroundColor","#87ceeb");
           }
         }
     } 
